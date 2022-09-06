@@ -1,21 +1,19 @@
 import React, { useState } from "react";
 
 export const Prectice = () => {
-  const [value, setValue] = useState(false);
+  const [value, setValue] = useState(0);
+
   function handlechange(text) {
-    if (text >=2 || text.length >=2) {
-      setValue(true)
-    }
+    setValue(text);
   }
+
   return (
     <div>
-    
       <input
-        disabled={value ? true : false}
+        disabled={value > 2}
         onChange={(e) => handlechange(e.target.value)}
       />
-      <button onClick={()=>setValue(false)}>click</button>
+      <button onClick={() => setValue(true)}>click</button>
     </div>
   );
 };
-
